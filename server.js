@@ -14,7 +14,7 @@ const MenuItem=require('./models/MenuItems');
 
 
 app.get('/',function(req,res){
-    res.send("welcomr to my hotel");
+    res.send("welcome to my hotel");
 })
 
 
