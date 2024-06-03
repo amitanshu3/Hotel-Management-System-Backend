@@ -1,7 +1,10 @@
 const mongoose=require('mongoose');
  //define the mongodb url
- 
- const mongourl='mongodb://127.0.0.1:27017/hotels';
+ require('dotenv').config();
+ //LOCAL URL
+ //const mongourl=process.env.MONGODB_URL_LOCAL;
+ //GLOBAL MONGODB URL HOSTED ON ATLAS MONGODB 
+ const mongourl=process.env.MONGODB_URL;
  
  //set mongodb connection
  mongoose.connect(mongourl,{

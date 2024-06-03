@@ -1,10 +1,11 @@
 const express=require("express");
 const app=express();
 const db=require('./db')
+require('dotenv').config();
 //we know that user can send data from  frontend in any fromat for that in order to filter out we will use body parser
 const bodyParser=require('body-parser');
 app.use(bodyParser.json());
-
+const PORT=process.env.PORT ||3000
 
 
 const Person=require('./models/person');
@@ -29,7 +30,9 @@ app.use('/person',personRoutes);
 const menuRoutes=require('./routes/menuRoutes');
 app.use('/menu',menuRoutes)
 
+
+
 console.log("hello")
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("listening on port 3000")
 })
